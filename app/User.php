@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // chce połączyć post id z usererm i tworze function posts
+    // posts = App\User::find(1)->posts;
+    //foreach ($posts as post) {
+        //
+    //}
+    public function posts(){
+      return $this->hasMany('App\Post');
+    }
+
 }
